@@ -15,9 +15,9 @@ class ComicSeeders extends Seeder
      */
     public function run()
     {
-        $comics = config('db');
+        $comics = config('db.cards');
 
-        foreach($comics['cards'] as $comic){
+        foreach($comics as $comic){
             $newComic = new Comic();
             $newComic->title = $comic['title'];
             $newComic->description = $comic['description'];
@@ -26,8 +26,6 @@ class ComicSeeders extends Seeder
             $newComic->series = $comic['series'];
             $newComic->sale_date = $comic['sale_date'];
             $newComic->type = $comic['type'];
-            $newComic->artists = $comic['artists'];
-            $newComic->writers = $comic['writers'];
 
             $newComic->save();
         }
