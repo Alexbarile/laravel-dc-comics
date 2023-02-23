@@ -30,7 +30,7 @@
             {{-- logo --}}
     
             <div class="col">
-                <a href="/" class="logo">
+                <a href="{{route('homepage')}}" class="logo">
                     <img src="{{ Vite::asset('resources/img/dc-logo.png')}}" alt="DC">
                 </a>
             </div>
@@ -42,8 +42,8 @@
                     <li class="p-3 {{ Route::currentRouteName() == 'characters' ? 'active' : ''}}">
                         <a href="#null">Characters</a>
                     </li>
-                    <li class="p-3 {{ Route::currentRouteName() == 'comics' ? 'active' : ''}}">
-                        <a href="#null">Comics</a>
+                    <li class="p-3 {{ Route::currentRouteName() == 'comic.index' ? 'active' : ''}}">
+                        <a href="{{route('comics.index')}}">COMICS</a>
                     </li>
                     <li class="p-3 {{ Route::currentRouteName() == 'movies' ? 'active' : ''}}">
                         <a href="#null">Movies</a>

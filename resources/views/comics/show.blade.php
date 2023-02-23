@@ -10,8 +10,8 @@
         <div class="row p-5">
             <div class="col">
                 <div class="card-img">
-                    <img src="{{$comics['thumb']}}" alt="">
-                    <p class="type">{{$comics['type']}}</p>
+                    <img src="{{$comic['thumb']}}" alt="">
+                    <p class="type">{{$comic['type']}}</p>
                     <a href="#null">
                         <p>View Gallery</p>
                     </a>
@@ -30,14 +30,14 @@
 
         <div class="col-60">
             <div class="pb-3">
-                <h2>{{($comics['title'])}}</h2>
+                <h2>{{($comic['title'])}}</h2>
             </div>
             <div class="container-info pb-4">
                 <div class="row d-flex align-items-center">
                     <div class="col-70">
                         <div class="row-mini d-flex">
                             <div class="col d-flex">
-                                <p>U.S. Price:</p><span class="text-white fw-semibold">{{($comics['price'])}}</span>
+                                <p>U.S. Price:</p><span class="text-white fw-semibold">{{($comic['price'])}}</span>
                             </div>
                             <div class="col d-flex justify-content-end">
                                 <p>AVAILABLE</p>
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div>
-                <p>{{$comics['description']}}</p>
+                <p>{{$comic['description']}}</p>
             </div>
         </div>
 
@@ -94,7 +94,7 @@
                         <p>Art by:</p> 
                     </div>
                     <div class="col-70">
-                        <a href="#null"> {{$comics['artists']}} </a>
+                        <a href="#null"> {{$comic['artists']}} </a>
                     </div>
                 </div>
                 <div class="second-line d-flex justify-content-between align-self-baseline">
@@ -102,7 +102,7 @@
                         <p>Written by:</p> 
                     </div>
                     <div class="col-70">
-                        <a href="#null"> {{$comics['writers']}} </a>
+                        <a href="#null"> {{$comic['writers']}} </a>
                     </div>
                 </div>
             </div>
@@ -115,7 +115,7 @@
                         <p>Series:</p> 
                     </div>
                     <div class="col-70">
-                        <a href="#null"> {{$comics['series']}} </a>
+                        <a href="#null"> {{$comic['series']}} </a>
                     </div>
                 </div>
                 <div class="second-line d-flex justify-content-between align-self-baseline">
@@ -123,7 +123,7 @@
                         <p>U.S. Price:</p> 
                     </div>
                     <div class="col-70">
-                        <p>{{($comics['price'])}}</p>
+                        <p>{{($comic['price'])}}</p>
                     </div>
                 </div>
                 <div class="second-line d-flex justify-content-between align-self-baseline">
@@ -131,7 +131,7 @@
                         <p>On Sale Date:</p> 
                     </div>
                     <div class="col-70">
-                        <p>{{($comics['sale_date'])}}</p>
+                        <p>{{($comic['sale_date'])}}</p>
                     </div>
                 </div>
             </div>

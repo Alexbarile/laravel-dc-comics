@@ -11,12 +11,17 @@
             <div class="col-info">
                 <h4>Current series</h4>
             </div>
+            <div class="mt-5">
+                <a href="{{route('comics.create')}}">
+                    <button type="button" class="btn btn-primary">Aggiungi Comics</button>
+                </a>
+            </div>
         </div>
         <div class="row">
             <div class="col">
                 @foreach($comics as $card)
                 <div class="album-card">
-                    <a href="/comics/{{$card['slug']}}">
+                    <a href="{{route('comics.show', ['comic' => $card['id']])}}">
                     {{-- <a href="{{route ('detail-comics', ['slug' => $card['slug']])}}"></a> --}}
                         <div class="card-img">
                             <img src="{{$card['thumb']}}" alt="">

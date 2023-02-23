@@ -14,6 +14,5 @@ class PagesController extends Controller
         $icon = config('db.icon');
         $social = config('db.social');
         return view('homepage', compact('icon', 'social'));
-
     }
 }
