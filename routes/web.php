@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 // richiamo il CONTROLLER
 
+use App\Http\Controllers\PagesController as PagesController;
 use App\Http\Controllers\ComicController as ComicController;
 
 /*
@@ -17,16 +18,16 @@ use App\Http\Controllers\ComicController as ComicController;
 |
 */
 
-// CHARACTERS
+// // CHARACTERS
 
-Route::get('/characters}', [ComicController::class, 'characters'])->name('characters');
+// Route::get('/characters}', [ComicController::class, 'characters'])->name('characters');
 
-// COMICS
+// // COMICS
 
-Route::get('/comics/{slug}', [ComicController::class, 'detailComics'])->name('detail-comics');
+// Route::get('/comics/{slug}', [ComicController::class, 'detailComics'])->name('detail-comics');
 
 // HOMEPAGE
+Route::get('/', [PagesController::class, 'index'])->name('homepage');
 
-Route::get('/', [ComicController::class, 'index'])->name('homepage');
 
 
