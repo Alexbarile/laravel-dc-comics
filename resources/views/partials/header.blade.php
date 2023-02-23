@@ -40,7 +40,7 @@
             <nav class="col">
                 <ul class="d-flex">
                     <li class="p-3 {{ Route::currentRouteName() == 'characters' ? 'active' : ''}}">
-                        <a href="{{ route('characters')}}">Characters</a>
+                        <a href="#null">Characters</a>
                     </li>
                     <li class="p-3 {{ Route::currentRouteName() == 'comics' ? 'active' : ''}}">
                         <a href="#null">Comics</a>

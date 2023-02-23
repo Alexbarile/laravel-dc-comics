@@ -13,7 +13,7 @@ class PagesController extends Controller
     public function index(){
         $icon = config('db.icon');
         $social = config('db.social');
-        return view('index', compact('icon', 'social'));
+        return view('homepage', compact('icon', 'social'));
 
     }
 }
