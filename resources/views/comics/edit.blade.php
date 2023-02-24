@@ -5,16 +5,12 @@
     <div class="container">
         <div class="row">
             <div class="col-12 py-4">
-                
                 <form action="{{route('comics.store')}}" method="POST">
                     @csrf 
                     
                     <div class="form-group my-2">
                         <label for="titolo" class="fs-4 my-2">title</label>
                         <input  class="form-control" type="text" name="title" id="titolo">
-                        @error('title')
-                        <div class="text-danger">{{ $message}}</div>
-                        @enderror
                     </div>
                     <div class="form-group my-2">
                         <label for="descrizione" class="fs-4 my-2">description</label>
