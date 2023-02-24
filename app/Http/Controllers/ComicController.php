@@ -45,7 +45,7 @@ class ComicController extends Controller
     {
         $data = $request->validate([
             'title'=>'required',
-            'descrption'=>'required',
+            'description'=>'required',
             'thumb'=>'required',
             'price'=>'required',
             'series'=>'required',
@@ -114,7 +114,7 @@ class ComicController extends Controller
 
         $data = $request->validate([
             'title'=>'required',
-            'descrption'=>'required',
+            'description'=>'required',
             'thumb'=>'required',
             'price'=>'required',
             'series'=>'required',

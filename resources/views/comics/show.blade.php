@@ -7,7 +7,7 @@
 
 <div class="bg-blue">
     <div class="container">
-        <div class="row p-5">
+        <div class="row d-flex p-5">
             <div class="col">
                 <div class="card-img">
                     <img src="{{$comic['thumb']}}" alt="">
@@ -16,6 +16,11 @@
                         <p>View Gallery</p>
                     </a>
                 </div>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <a href="{{route('comics.edit', ['comic' => $comic['id']])}}">
+                    <button type="button" class="btn btn-warning">Modifica Comic</button>
+                </a>
             </div>
         </div>
     </div>
