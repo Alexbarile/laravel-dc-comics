@@ -29,6 +29,11 @@
                         </div>
                         <h3>{{$card['series']}}</h3>  
                     </a>
+                    <a href="{{route('comics.edit', ['comic' => $card['id']])}}">
+                        {{-- il 'comic' fa riferimento alla route del web.php, al singolare --}}
+                    {{-- <a href="{{route ('detail-comics', ['slug' => $card['slug']])}}"></a> --}}
+                    
+                    </a>
                 </div>
                 @endforeach
             </div>
