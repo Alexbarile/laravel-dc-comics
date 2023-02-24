@@ -43,7 +43,7 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
+        $data = $this->validation($request->all());
 
         $newComic = new Comic();
         // $newComic->title = $data['title'];
@@ -100,7 +100,14 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        $data = $this->validation(request->all());
+        $comic->update($data);
+
+        return redirect()->route('comics.show', ['comic' => $comic-> id]);
+
+
     }
 
     /**

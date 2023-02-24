@@ -19,22 +19,37 @@
                     <div class="form-group my-2">
                         <label for="descrizione" class="fs-4 my-2">description</label>
                         <textarea  class="form-control" type="text" name="description" id="descrizione" rows="4"></textarea>
+                        @error('description')
+                        <div class="text-danger">{{ $message}}</div>
+                        @enderror
                     </div>
                     <div class="form-group my-2">
                         <label for="immagine" class="fs-4 my-2">thumb</label>
                         <input  class="form-control" type="text" name="thumb" id="immagine">
+                        @error('thumb')
+                        <div class="text-danger">{{ $message}}</div>
+                        @enderror
                     </div>
                     <div class="form-group my-2">
                         <label for="prezzo" class="fs-4 my-2">price</label>
                         <input  class="form-control" type="text" name="price" id="prezzo">
+                        @error('price')
+                        <div class="text-danger">{{ $message}}</div>
+                        @enderror
                     </div>
                     <div class="form-group my-2">
                         <label for="serie" class="fs-4 my-2">series</label>
                         <input  class="form-control" type="text" name="series" id="serie">
+                        @error('series')
+                        <div class="text-danger">{{ $message}}</div>
+                        @enderror
                     </div>
                     <div class="form-group my-2">
                         <label for="tipo" class="fs-4 my-2">type</label>
                         <input  class="form-control" type="text" name="type" id="tipo">
+                        @error('type')
+                        <div class="text-danger">{{ $message}}</div>
+                        @enderror
                     </div>
                     <button type="sumbit" class="btn btn-success my-3">Invia</button>
                 </form>
