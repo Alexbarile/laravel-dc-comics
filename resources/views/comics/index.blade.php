@@ -22,6 +22,7 @@
                 @foreach($comics as $card)
                 <div class="album-card">
                     <a href="{{route('comics.show', ['comic' => $card['id']])}}">
+                        {{-- il 'comic' fa riferimento alla route del web.php, al singolare --}}
                     {{-- <a href="{{route ('detail-comics', ['slug' => $card['slug']])}}"></a> --}}
                         <div class="card-img">
                             <img src="{{$card['thumb']}}" alt="">
