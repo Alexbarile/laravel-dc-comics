@@ -43,7 +43,11 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $this->validation($request->all());
+        $data = $request->validate([
+            'title'=>'required',
+
+        ]
+        );
 
         $newComic = new Comic();
         // $newComic->title = $data['title'];
@@ -102,7 +106,11 @@ class ComicController extends Controller
     {
         $comic = Comic::findOrFail($id);
 
-        $data = $this->validation(request->all());
+        $data = $request->validate([
+            'title'=>'required',
+
+        ]);
+       
         $comic->update($data);
 
         return redirect()->route('comics.show', ['comic' => $comic-> id]);
@@ -118,6 +126,10 @@ class ComicController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+
+        $comic->delete();
+        return redirect()->route('comics.index');
+
     }
 }
