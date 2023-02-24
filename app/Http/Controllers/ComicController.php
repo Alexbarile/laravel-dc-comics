@@ -45,6 +45,11 @@ class ComicController extends Controller
     {
         $data = $request->validate([
             'title'=>'required',
+            'descrption'=>'required',
+            'thumb'=>'required',
+            'price'=>'required',
+            'series'=>'required',
+            'type'=>'required',
 
         ]
         );
@@ -57,6 +62,7 @@ class ComicController extends Controller
         // $newComic->series = $data['series'];
         // $newComic->type = $data['type'];
 
+        // aggiunto PROTECTED in MODEL
         $newComic->fill($data);
 
         $newComic->save();
@@ -108,6 +114,11 @@ class ComicController extends Controller
 
         $data = $request->validate([
             'title'=>'required',
+            'descrption'=>'required',
+            'thumb'=>'required',
+            'price'=>'required',
+            'series'=>'required',
+            'type'=>'required',
 
         ]);
        

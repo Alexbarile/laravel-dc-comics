@@ -17,7 +17,6 @@
                 
                 <form action="{{route('comics.store')}}" method="POST">
                     @csrf 
-                    
                     <div class="form-group my-2">
                         <label for="titolo" class="fs-4 my-2">title</label>
                         <input  class="form-control" type="text" name="title" id="titolo">
