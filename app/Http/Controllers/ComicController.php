@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+// richiamo il VALIDATOR per funzione Validation
+
+use Illuminate\Support\Facades\Validator;
+
 // richiamo MODEL
 
 use App\Models\Comic as Comic;
@@ -43,18 +47,22 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->validate([
-            'title'=>'required',
-            'description'=>'required',
-            'thumb'=>'required',
-            'price'=>'required',
-            'series'=>'required',
-            'type'=>'required',
 
-        ]
-        );
+        $data = $this->validation($request->all());
+
+        // $data = $request->validate([
+        //     'title'=>'required',
+        //     'description'=>'required',
+        //     'thumb'=>'required',
+        //     'price'=>'required',
+        //     'series'=>'required',
+        //     'type'=>'required',
+
+        // ]
+        // );
 
         $newComic = new Comic();
+
         // $newComic->title = $data['title'];
         // $newComic->description = $data['description'];
         // $newComic->thumb = $data['thumb'];
@@ -63,8 +71,8 @@ class ComicController extends Controller
         // $newComic->type = $data['type'];
 
         // aggiunto PROTECTED in MODEL
-        $newComic->fill($data);
 
+        $newComic->fill($data);
         $newComic->save();
         return redirect()->route('comics.show', ['comic' => $newComic-> id]);
         // il 'comic' fa riferimento alla route del web.php, al singolare
@@ -82,7 +90,6 @@ class ComicController extends Controller
         $comic = Comic::findOrFail($id);
         $icon = config('db.icon');
         $social = config('db.social');
-        
         return view('comics.show', compact('comic', 'icon', 'social'));
     }
 
@@ -97,7 +104,6 @@ class ComicController extends Controller
         $comic = Comic::findOrFail($id);
         $icon = config('db.icon');
         $social = config('db.social');
-        
         return view('comics.edit', compact('comic', 'icon', 'social'));
     }
 
@@ -111,22 +117,20 @@ class ComicController extends Controller
     public function update(Request $request, $id)
     {
         $comic = Comic::findOrFail($id);
+        $data = $this->validation($request->all());
 
-        $data = $request->validate([
-            'title'=>'required',
-            'description'=>'required',
-            'thumb'=>'required',
-            'price'=>'required',
-            'series'=>'required',
-            'type'=>'required',
+        // $data = $request->validate([
+        //     'title'=>'required',
+        //     'description'=>'required',
+        //     'thumb'=>'required',
+        //     'price'=>'required',
+        //     'series'=>'required',
+        //     'type'=>'required',
 
-        ]);
+        // ]);
        
         $comic->update($data);
-
         return redirect()->route('comics.show', ['comic' => $comic-> id]);
-
-
     }
 
     /**
@@ -138,9 +142,31 @@ class ComicController extends Controller
     public function destroy($id)
     {
         $comic = Comic::findOrFail($id);
-
         $comic->delete();
         return redirect()->route('comics.index');
+    }
 
+    // Funzione per Validare i dati al momento del Form
+
+    private function validation($data){
+        $validator = Validator::make($data, [
+            'title'=>'required',
+            'description'=>'required|max:600',
+            'thumb'=>'required',
+            'price'=>'required',
+            'series'=>'required',
+            'type'=>'required',
+        ],
+        [
+            'title.required'=> 'Il titolo è obbligatorio',
+            'description.required'=>'La descrizione è obbligatoria',
+            'description.max'=>'La descrizione non può essere superiore a :max caratteri',
+            'thumb.required'=>'La foto è obbligatoria',
+            'price.required'=>'Il prezzo è obbligatorio',
+            'series.required'=>'La serie è obbligatoria',
+            'type.required'=>'Il tipo è obbligatorio',
+        ])->validate();
+
+        return $validator;
     }
 }
