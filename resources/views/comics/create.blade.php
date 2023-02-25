@@ -20,43 +20,43 @@
                     @csrf 
                     <div class="form-group my-2">
                         <label for="titolo" class="fs-4 my-2">Title</label>
-                        <input  class="form-control" type="text" name="Title" id="titolo">
-                        @error('Title')
+                        <input  class="form-control" type="text" name="title" id="titolo">
+                        @error('title')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
                     <div class="form-group my-2">
                         <label for="descrizione" class="fs-4 my-2">Description</label>
-                        <textarea  class="form-control" type="text" name="Description" id="descrizione" rows="4"></textarea>
-                        @error('Description')
+                        <textarea  class="form-control" type="text" name="description" id="descrizione" rows="4"></textarea>
+                        @error('description')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
                     <div class="form-group my-2">
                         <label for="immagine" class="fs-4 my-2">Thumb</label>
-                        <input  class="form-control" type="text" name="Thumb" id="immagine">
-                        @error('Thumb')
+                        <input  class="form-control" type="text" name="thumb" id="immagine">
+                        @error('thumb')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
                     <div class="form-group my-2">
                         <label for="prezzo" class="fs-4 my-2">Price</label>
-                        <input  class="form-control" type="text" name="Price" id="prezzo">
-                        @error('Price')
+                        <input  class="form-control" type="text" name="price" id="prezzo">
+                        @error('price')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
                     <div class="form-group my-2">
                         <label for="serie" class="fs-4 my-2">Series</label>
-                        <input  class="form-control" type="text" name="Series" id="serie">
-                        @error('Series')
+                        <input  class="form-control" type="text" name="series" id="serie">
+                        @error('series')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
                     <div class="form-group my-2">
                         <label for="tipo" class="fs-4 my-2">Type</label>
-                        <input  class="form-control" type="text" name="Type" id="tipo">
-                        @error('Type')
+                        <input  class="form-control" type="text" name="type" id="tipo">
+                        @error('type')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>

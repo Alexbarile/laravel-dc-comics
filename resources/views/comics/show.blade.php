@@ -21,16 +21,17 @@
                 <a href="{{route('comics.edit', ['comic' => $comic['id']])}}">
                     <button type="button" class="btn btn-warning m-2">Modifica</button>
                 </a>
-                <form action="{{route('comics.destroy', ['comic' => $comic['id']])}}" class="d-inline-block" method="POST">
+                {{-- <form action="{{route('comics.destroy', ['comic' => $comic['id']])}}" class="d-inline-block" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger confirm-delete-button m-2" data-title="{{$comic->title}}">Cancella</button>
-                </form>
+                </form> --}}
+                <button type="submit" class="btn btn-danger m-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Cancella</button>
             </div>
         </div>
     </div>
 </div>
-
+@include('partials.modal_delete')
 
 {{-- SCHEDA COMIC --}}
 
@@ -149,7 +150,6 @@
         </div>
     </div>
 </div>
-@include('partials.modal_delete')
 
 @endsection
 
