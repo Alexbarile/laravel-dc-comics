@@ -19,18 +19,18 @@
             </div>
             <div class="col d-flex justify-content-end">
                 <a href="{{route('comics.edit', ['comic' => $comic['id']])}}">
-                    <button type="button" class="btn btn-warning">Modifica</button>
+                    <button type="button" class="btn btn-warning m-2">Modifica</button>
                 </a>
                 <form action="{{route('comics.destroy', ['comic' => $comic['id']])}}" class="d-inline-block" method="POST">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger confirm-delete-button" data-title="{{$comic->title}}">Cancella</button>
+                    <button type="submit" class="btn btn-danger confirm-delete-button m-2" data-title="{{$comic->title}}">Cancella</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-@include('partials.modal_delete')
+
 
 {{-- SCHEDA COMIC --}}
 
@@ -149,6 +149,7 @@
         </div>
     </div>
 </div>
+@include('partials.modal_delete')
 
 @endsection
 

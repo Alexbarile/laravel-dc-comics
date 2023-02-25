@@ -5,6 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 py-4">
+                <h1>Crea un nuovo Comic</h1>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -18,48 +19,48 @@
                 <form action="{{route('comics.store')}}" method="POST">
                     @csrf 
                     <div class="form-group my-2">
-                        <label for="titolo" class="fs-4 my-2">title</label>
-                        <input  class="form-control" type="text" name="title" id="titolo">
-                        @error('title')
+                        <label for="titolo" class="fs-4 my-2">Title</label>
+                        <input  class="form-control" type="text" name="Title" id="titolo">
+                        @error('Title')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
                     <div class="form-group my-2">
-                        <label for="descrizione" class="fs-4 my-2">description</label>
-                        <textarea  class="form-control" type="text" name="description" id="descrizione" rows="4"></textarea>
-                        @error('description')
+                        <label for="descrizione" class="fs-4 my-2">Description</label>
+                        <textarea  class="form-control" type="text" name="Description" id="descrizione" rows="4"></textarea>
+                        @error('Description')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
                     <div class="form-group my-2">
-                        <label for="immagine" class="fs-4 my-2">thumb</label>
-                        <input  class="form-control" type="text" name="thumb" id="immagine">
-                        @error('thumb')
+                        <label for="immagine" class="fs-4 my-2">Thumb</label>
+                        <input  class="form-control" type="text" name="Thumb" id="immagine">
+                        @error('Thumb')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
                     <div class="form-group my-2">
-                        <label for="prezzo" class="fs-4 my-2">price</label>
-                        <input  class="form-control" type="text" name="price" id="prezzo">
-                        @error('price')
+                        <label for="prezzo" class="fs-4 my-2">Price</label>
+                        <input  class="form-control" type="text" name="Price" id="prezzo">
+                        @error('Price')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
                     <div class="form-group my-2">
-                        <label for="serie" class="fs-4 my-2">series</label>
-                        <input  class="form-control" type="text" name="series" id="serie">
-                        @error('series')
+                        <label for="serie" class="fs-4 my-2">Series</label>
+                        <input  class="form-control" type="text" name="Series" id="serie">
+                        @error('Series')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
                     <div class="form-group my-2">
-                        <label for="tipo" class="fs-4 my-2">type</label>
-                        <input  class="form-control" type="text" name="type" id="tipo">
-                        @error('type')
+                        <label for="tipo" class="fs-4 my-2">Type</label>
+                        <input  class="form-control" type="text" name="Type" id="tipo">
+                        @error('Type')
                         <div class="text-danger">{{ $message}}</div>
                         @enderror
                     </div>
-                    <button type="sumbit" class="btn btn-success my-3">Invia</button>
+                    <button type="sumbit" class="btn btn-success my-3">Send</button>
                 </form>
             </div>
         </div>
