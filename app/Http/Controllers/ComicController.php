@@ -48,6 +48,8 @@ class ComicController extends Controller
     public function store(Request $request)
     {
 
+        // 2 METODO VALIDATION (segui l'ordine)
+
         $data = $this->validation($request->all());
 
         // $data = $request->validate([
@@ -60,6 +62,10 @@ class ComicController extends Controller
 
         // ]
         // );
+
+        // 1 METODO (seguire l'ordine)
+
+        // $data = $request->all();
 
         $newComic = new Comic();
 
